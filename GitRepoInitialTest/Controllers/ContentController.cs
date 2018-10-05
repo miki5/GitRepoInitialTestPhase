@@ -23,9 +23,10 @@ namespace GitRepoInitialTest.Controllers
         [HttpPost]
         public IActionResult ManagingPOST(string searchValue)
         {
-            string test = HelperRepository.HelperSaveToGit.GitRepo();
+            HelperRepository.HelperGit.GitRepoInfo();
+			HelperRepository.HelperGit.CopyRepositoryFromGit();
 
-            return View("Managing");
+			return View("Managing");
         }
     }
 }
